@@ -14,7 +14,72 @@
         android:layout_centerInParent="true"
         app:contentPadding="@dimen/spacing_m">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
+            <ImageView
+                android:layout_width="128dp"
+                android:layout_height="128dp"
+                android:layout_gravity="center"
+                android:src="@mipmap/ic_launcher_round"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_input"
+                android:layout_marginTop="@dimen/spacing_m"
+                android:hint="Username"
+                android:padding="@dimen/spacing_s"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_input"
+                android:layout_marginTop="@dimen/spacing_m"
+                android:hint="Password"
+                android:padding="@dimen/spacing_s"/>
+
+            <TextView
+                android:layout_marginTop="@dimen/spacing_s"
+                android:layout_gravity="end"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorPrimary"
+                android:textStyle="bold"
+                android:text="Lupa password"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/spacing_s">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Belum punya akun? "/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorPrimary"
+                    android:textStyle="bold"
+                    android:text="Register"/>
+
+            </LinearLayout>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_m"
+                android:background="@drawable/bg_input"
+                android:backgroundTint="@color/colorPrimary"
+                android:text="Login"/>
+
+        </LinearLayout>
 
     </androidx.cardview.widget.CardView>
 
