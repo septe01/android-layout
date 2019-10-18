@@ -21,8 +21,9 @@
 
             <ImageView
                 android:id="@+id/ivAvatar"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:layout_width="192dp"
+                android:layout_height="192dp"
                 android:padding="@dimen/spacing_l"/>
 
             <RadioGroup
