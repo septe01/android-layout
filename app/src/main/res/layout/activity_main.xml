@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -20,13 +21,73 @@
             android:orientation="vertical">
 
             <ImageView
+                android:visibility="gone"
                 android:id="@+id/ivAvatar"
                 android:layout_gravity="center"
                 android:layout_width="192dp"
                 android:layout_height="192dp"
                 android:padding="@dimen/spacing_l"/>
 
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/etName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_input"
+                    android:padding="@dimen/spacing_m"
+                    android:textSize="@dimen/text_m"
+                    android:hint="Full name"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_s">
+
+                <EditText
+                    android:id="@+id/etUsername"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_input"
+                    android:padding="@dimen/spacing_m"
+                    android:textSize="@dimen/text_m"
+                    android:hint="Username"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_s"
+                app:passwordToggleEnabled="true">
+
+                <EditText
+                    android:id="@+id/etPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_input"
+                    android:padding="@dimen/spacing_m"
+                    android:textSize="@dimen/text_m"
+                    android:inputType="textPassword"
+                    android:hint="Password"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:layout_marginTop="@dimen/spacing_m"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Jenis kelamin:"
+                android:textColor="@android:color/black"
+                android:textStyle="bold"
+                android:textSize="@dimen/text_m"/>
+
             <RadioGroup
+                android:id="@+id/rgGender"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
@@ -51,41 +112,52 @@
 
             </RadioGroup>
 
-            <GridLayout
-                style="@style/widthMatchHeightWrap"
-                android:orientation="horizontal"
-                android:layout_marginTop="@dimen/spacing_s"
-                android:columnCount="2">
-
-                <CheckBox
-                    android:layout_columnWeight="1"
-                    android:text="Satu"/>
-
-                <CheckBox
-                    android:layout_columnWeight="1"
-                    android:text="Dua"/>
-
-                <CheckBox
-                    android:layout_columnWeight="1"
-                    android:text="Tiga"/>
-
-                <CheckBox
-                    android:layout_columnWeight="1"
-                    android:text="Empat"/>
-
-            </GridLayout>
+            <TextView
+                android:layout_marginTop="@dimen/spacing_m"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Jenis pekerjaan:"
+                android:textColor="@android:color/black"
+                android:textStyle="bold"
+                android:textSize="@dimen/text_m"/>
 
             <Spinner
                 android:id="@+id/spList"
                 android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_marginTop="@dimen/spacing_m"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/spacing_s"/>
+                android:text="Syarat dan ketentuan:"
+                android:textColor="@android:color/black"
+                android:textStyle="bold"
+                android:textSize="@dimen/text_m"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/lorem_random"
-                android:layout_marginTop="@dimen/spacing_s"/>
+                android:text="@string/lorem"
+                android:textSize="@dimen/text_m"/>
+
+            <EditText
+                android:layout_marginTop="@dimen/spacing_s"
+                android:visibility="gone"
+                android:id="@+id/etOther"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_input"
+                android:padding="@dimen/spacing_m"
+                android:textSize="@dimen/text_m"
+                android:hint="Username"/>
+
+            <CheckBox
+                android:id="@+id/cbTerm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Saya menyetujui syarat dan ketentuan yang diberikan"
+                android:layout_marginTop="@dimen/spacing_m"/>
 
         </LinearLayout>
 
@@ -96,10 +168,11 @@
         android:layout_margin="@dimen/spacing_s"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="@android:color/black"
+        android:textColor="@android:color/white"
         android:backgroundTint="@color/colorPrimary"
+        android:textSize="@dimen/text_m"
         android:layout_marginTop="@dimen/spacing_m"
         android:layout_alignParentBottom="true"
-        android:text="Submit"/>
+        android:text="Daftar"/>
 
 </RelativeLayout>

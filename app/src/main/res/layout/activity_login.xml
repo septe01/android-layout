@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#DBDBDB"
     tools:context=".LoginActivity">
 
     <androidx.cardview.widget.CardView
@@ -70,6 +71,7 @@
                     android:layout_height="wrap_content"
                     android:drawableStart="@drawable/ic_email"
                     android:drawablePadding="@dimen/spacing_s"
+                    android:textSize="@dimen/text_m"
                     android:drawableTint="@color/colorPrimaryDark"
                     android:background="@drawable/bg_input"
                     android:layout_marginTop="@dimen/spacing_m"
@@ -82,6 +84,7 @@
                     android:drawableStart="@drawable/ic_key"
                     android:drawableTint="@color/colorPrimaryDark"
                     android:drawablePadding="@dimen/spacing_s"
+                    android:textSize="@dimen/text_m"
                     android:background="@drawable/bg_input"
                     android:layout_marginTop="@dimen/spacing_m"
                     android:hint="Password"
@@ -109,6 +112,7 @@
                         android:text="Belum punya akun? "/>
 
                     <TextView
+                        android:id="@+id/tvRegister"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textColor="@color/colorPrimary"
@@ -123,6 +127,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/spacing_m"
                     android:background="@drawable/bg_input"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/text_m"
                     android:backgroundTint="@color/colorPrimary"
                     android:text="Login"/>
 

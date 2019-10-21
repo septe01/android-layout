@@ -15,6 +15,8 @@ class ListActivity : AppCompatActivity() {
         //Membuat variable adapter dari class PostAdapter
         val adapter = PostAdapter()
 
+        supportActionBar!!.title = "RecyclerView"
+
         //Membuat recycle scoll ke bawah atau vertical
         val layoutManager = LinearLayoutManager(this)
         layoutManager.orientation = LinearLayoutManager.VERTICAL
@@ -23,14 +25,13 @@ class ListActivity : AppCompatActivity() {
         val list: ArrayList<Int> = ArrayList()
         list.add(R.mipmap.ic_icon)
         list.add(R.mipmap.ic_launcher)
-        list.add(R.drawable.ic_email)
+        list.add(R.mipmap.ic_icon)
         list.add(R.mipmap.ic_launcher)
         list.add(R.mipmap.ic_icon)
         list.add(R.mipmap.ic_launcher)
-        list.add(R.drawable.ic_email)
+        list.add(R.mipmap.ic_icon)
         list.add(R.mipmap.ic_launcher)
         list.add(R.mipmap.ic_icon)
-        list.add(R.drawable.ic_email)
 
         //Menset list ke adapter
         adapter.list = list
