@@ -2,14 +2,16 @@ package com.biceps_studio.androidlayout.activity
 
 import android.content.Context
 import android.content.Intent
-import android.opengl.Visibility
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
 import android.view.View
-import android.widget.*
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
+import android.widget.RadioButton
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.biceps_studio.androidlayout.R
 import com.biceps_studio.androidlayout.utils.LocalStorage
 import com.bumptech.glide.Glide
@@ -36,6 +38,10 @@ class MainActivity : AppCompatActivity() {
         //Membuat adapter untuk spinner, sehingga akan menampilkan dropdown dari vaiable list
         val adapter: ArrayAdapter<String> = ArrayAdapter(getActivity(), android.R.layout.simple_spinner_dropdown_item, list)
         spList.adapter = adapter
+
+        if (localStorage.getJob() != -1){
+            spList.setSelection(localStorage.getJob())
+        }
 
         //Membuat real time action pada edittext password
         etPassword.addTextChangedListener(object : TextWatcher {
@@ -75,7 +81,7 @@ class MainActivity : AppCompatActivity() {
         //Membuat real time action pada spinner
         spList.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onNothingSelected(p0: AdapterView<*>?) {
-                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+                Log.e("TAG", "Not implemented")
             }
 
             //Action ketika user memilih option berdasarkan posisinya
@@ -93,7 +99,11 @@ class MainActivity : AppCompatActivity() {
         Glide.with(getActivity()).load(url).apply(RequestOptions.circleCropTransform()).into(ivAvatar)
 
         btnSubmit.setOnClickListener {
-            localStorage.saveFullName(etName.text.toString())
+            if (etName.text.isNotEmpty()){
+                localStorage.saveFullName(etName.text.toString())
+            }
+
+            localStorage.saveJob(spList.selectedItemPosition)
 
             startActivity(Intent(getActivity(), LoginActivity::class.java))
         }

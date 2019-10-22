@@ -28,8 +28,8 @@ class LoginActivity : AppCompatActivity() {
         if (localStorage.getFullName().isNotEmpty()) {
             Toast.makeText(getActivity(), "Full name : ${localStorage.getFullName()}", Toast.LENGTH_LONG).show()
 
-            startActivity(Intent(getActivity(), ListActivity::class.java))
-            finish()
+//            startActivity(Intent(getActivity(), ListActivity::class.java))
+//            finish()
         }
     }
 
