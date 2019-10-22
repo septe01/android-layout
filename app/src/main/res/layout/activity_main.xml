@@ -126,6 +126,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
+            <EditText
+                android:layout_marginTop="@dimen/spacing_s"
+                android:visibility="gone"
+                android:id="@+id/etOther"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_input"
+                android:padding="@dimen/spacing_m"
+                android:textSize="@dimen/text_m"
+                android:hint="Other"/>
+
             <TextView
                 android:layout_marginTop="@dimen/spacing_m"
                 android:layout_width="match_parent"
@@ -140,17 +151,6 @@
                 android:layout_height="wrap_content"
                 android:text="@string/lorem"
                 android:textSize="@dimen/text_m"/>
-
-            <EditText
-                android:layout_marginTop="@dimen/spacing_s"
-                android:visibility="gone"
-                android:id="@+id/etOther"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/bg_input"
-                android:padding="@dimen/spacing_m"
-                android:textSize="@dimen/text_m"
-                android:hint="Username"/>
 
             <CheckBox
                 android:id="@+id/cbTerm"
