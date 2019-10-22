@@ -13,7 +13,9 @@ class PostAdapter : RecyclerView.Adapter<PostAdapter.ViewHolder>(){
 
     var list: ArrayList<Int> = ArrayList()
 
-    class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {}
+    var onListener: OnListener? = null
+
+    class ViewHolder(view: View) : RecyclerView.ViewHolder(view)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view: View = LayoutInflater.from(parent.context).inflate(R.layout.row_item, parent, false)
@@ -26,5 +28,13 @@ class PostAdapter : RecyclerView.Adapter<PostAdapter.ViewHolder>(){
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         //Code untuk mengubah gambar sesuai dengan index
         Glide.with(holder.itemView).load(list[position]).apply(RequestOptions.circleCropTransform()).into(holder.itemView.ivUser)
+
+        //Memberikan aksi pada interface
+        holder.itemView.ivUser.setOnClickListener { onListener!!.onClick(position) }
+    }
+
+    //Membuat interface
+    interface OnListener {
+        fun onClick(position: Int)
     }
 }

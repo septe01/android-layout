@@ -2,6 +2,7 @@ package com.biceps_studio.androidlayout.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.biceps_studio.androidlayout.adapter.PostAdapter
 import com.biceps_studio.androidlayout.R
@@ -15,6 +16,12 @@ class ListActivity : AppCompatActivity() {
 
         //Membuat variable adapter dari class PostAdapter
         val adapter = PostAdapter()
+        //Membuat inisialisasi dari interface yg ada di PostAdapter
+        adapter.onListener = object: PostAdapter.OnListener {
+            override fun onClick(position: Int) {
+                Toast.makeText(this@ListActivity, "Anda mengklick image pada posisi ${position}", Toast.LENGTH_SHORT).show()
+            }
+        }
 
         supportActionBar!!.title = "RecyclerView"
 
