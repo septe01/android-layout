@@ -9,11 +9,9 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
 import android.view.View
-import android.widget.AdapterView
-import android.widget.ArrayAdapter
-import android.widget.RadioButton
-import android.widget.Toast
+import android.widget.*
 import com.biceps_studio.androidlayout.R
+import com.biceps_studio.androidlayout.utils.LocalStorage
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import kotlinx.android.synthetic.main.activity_main.*
@@ -26,6 +24,8 @@ class MainActivity : AppCompatActivity() {
 
         supportActionBar!!.title = "Register"
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
+
+        val localStorage = LocalStorage(getActivity())
 
         val list: ArrayList<String> = ArrayList()
         list.add("Mahasiswa")
@@ -93,6 +93,8 @@ class MainActivity : AppCompatActivity() {
         Glide.with(getActivity()).load(url).apply(RequestOptions.circleCropTransform()).into(ivAvatar)
 
         btnSubmit.setOnClickListener {
+            localStorage.saveFullName(etName.text.toString())
+
             startActivity(Intent(getActivity(), LoginActivity::class.java))
         }
     }

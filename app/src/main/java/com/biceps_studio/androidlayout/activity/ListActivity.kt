@@ -6,6 +6,7 @@ import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.biceps_studio.androidlayout.adapter.PostAdapter
 import com.biceps_studio.androidlayout.R
+import com.biceps_studio.androidlayout.utils.LocalStorage
 import kotlinx.android.synthetic.main.activity_list.*
 
 class ListActivity : AppCompatActivity() {
@@ -21,6 +22,11 @@ class ListActivity : AppCompatActivity() {
             override fun onClick(position: Int) {
                 Toast.makeText(this@ListActivity, "Anda mengklick image pada posisi ${position}", Toast.LENGTH_SHORT).show()
             }
+        }
+
+        val localStorage = LocalStorage(this)
+        if (localStorage.getFullName().isNotEmpty()) {
+            Toast.makeText(this, "Full name : ${localStorage.getFullName()}", Toast.LENGTH_LONG).show()
         }
 
         supportActionBar!!.title = "RecyclerView"
