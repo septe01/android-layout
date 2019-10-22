@@ -1,9 +1,10 @@
-package com.biceps_studio.androidlayout
+package com.biceps_studio.androidlayout.activity
 
 import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.biceps_studio.androidlayout.R
 import kotlinx.android.synthetic.main.activity_login.*
 
 class LoginActivity : AppCompatActivity() {

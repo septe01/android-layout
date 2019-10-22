@@ -1,9 +1,10 @@
-package com.biceps_studio.androidlayout
+package com.biceps_studio.androidlayout.adapter
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.biceps_studio.androidlayout.R
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import kotlinx.android.synthetic.main.row_item.view.*

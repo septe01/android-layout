@@ -10,4 +10,4 @@
     app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
     app:spanCount="2"
     tools:listitem="@layout/row_item"
-    tools:context=".ListActivity"/>
+    tools:context=".activity.ListActivity"/>
