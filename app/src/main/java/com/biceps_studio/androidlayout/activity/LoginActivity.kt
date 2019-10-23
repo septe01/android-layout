@@ -8,6 +8,7 @@ import android.widget.Toast
 import com.biceps_studio.androidlayout.R
 import com.biceps_studio.androidlayout.utils.LocalStorage
 import kotlinx.android.synthetic.main.activity_login.*
+import kotlinx.android.synthetic.main.activity_main.*
 
 class LoginActivity : AppCompatActivity() {
 
@@ -16,6 +17,15 @@ class LoginActivity : AppCompatActivity() {
         setContentView(R.layout.activity_login)
 
         val localStorage = LocalStorage(getActivity())
+
+
+        if(localStorage.getUserName() != null){
+            etUser.setText(localStorage.getUserName())
+        }
+
+        if(localStorage.getUserPassword() != null ){
+            etPass.setText(localStorage.getUserPassword())
+        }
 
         btnLogin.setOnClickListener {
             startActivity(Intent(getActivity(), ListActivity::class.java))

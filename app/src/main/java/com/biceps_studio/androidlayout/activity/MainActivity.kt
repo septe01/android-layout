@@ -43,6 +43,28 @@ class MainActivity : AppCompatActivity() {
             spList.setSelection(localStorage.getJob())
         }
 
+        //mengisi etname dari localstorage
+        if (localStorage.getFullName() != null){
+            etName.setText(localStorage.getFullName())
+        }
+
+
+
+
+
+
+
+
+        if(localStorage.getUserName() != null){
+            etUsername.setText(localStorage.getUserName())
+        }
+        if(localStorage.getUserPassword() != null ){
+            etPassword.setText(localStorage.getUserPassword())
+        }
+        if (localStorage.getRdGender() != 0){
+//            spList.setSelection(localStorage.getJob())
+        }
+
         //Membuat real time action pada edittext password
         etPassword.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(p0: Editable?) {
@@ -55,7 +77,7 @@ class MainActivity : AppCompatActivity() {
 
             //Action real time untuk mendapatkan hasil input user
             override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-                Toast.makeText(getActivity(), p0!!.toString(), Toast.LENGTH_SHORT).show()
+//                Toast.makeText(getActivity(), p0!!.toString(), Toast.LENGTH_SHORT).show()
             }
         })
 
@@ -99,8 +121,17 @@ class MainActivity : AppCompatActivity() {
         Glide.with(getActivity()).load(url).apply(RequestOptions.circleCropTransform()).into(ivAvatar)
 
         btnSubmit.setOnClickListener {
+
+
             if (etName.text.isNotEmpty()){
                 localStorage.saveFullName(etName.text.toString())
+            }
+//                menyimpan isi dari etusername ke localstorage
+            if (etUsername.text.isNotEmpty()){
+                localStorage.saveUsername(etUsername.text.toString())
+            }
+            if(etPassword.text.isNotEmpty()){
+                localStorage.savePassword(etPassword.text.toString())
             }
 
             localStorage.saveJob(spList.selectedItemPosition)

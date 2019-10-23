@@ -26,7 +26,7 @@ class ListActivity : AppCompatActivity() {
 
         val localStorage = LocalStorage(this)
         if (localStorage.getFullName().isNotEmpty()) {
-            Toast.makeText(this, "Full name : ${localStorage.getFullName()}", Toast.LENGTH_LONG).show()
+//            Toast.makeText(this, "Full name : ${localStorage.getFullName()}", Toast.LENGTH_LONG).show()
         }
 
         supportActionBar!!.title = "RecyclerView"

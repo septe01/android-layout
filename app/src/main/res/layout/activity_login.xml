@@ -67,6 +67,7 @@
                 </LinearLayout>
 
                 <EditText
+                    android:id="@+id/etUser"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:drawableStart="@drawable/ic_email"
@@ -79,6 +80,7 @@
                     android:padding="@dimen/spacing_s"/>
 
                 <EditText
+                    android:id="@+id/etPass"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:drawableStart="@drawable/ic_key"
